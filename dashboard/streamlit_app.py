@@ -5,9 +5,9 @@ import plotly.express as px
 import plotly.graph_objects as go
 from pathlib import Path
 
-st.set_page_config(page_title="Smart Agrikultur Dashboard", layout="wide")
+st.set_page_config(page_title="Smart Agriculture Dashboard", layout="wide")
 
-st.title("🌱 Smart Agrikultur Dashboard")
+st.title("🌱 Smart Agriculture Dashboard")
 
 # =========================
 # LOAD DATA
