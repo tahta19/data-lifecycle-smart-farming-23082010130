@@ -1,98 +1,85 @@
 # Smart Farming Data Lifecycle Dashboard
 
-Proyek ini berisi analisis data sensor pertanian cerdas (Smart Farming) dari berbagai tanaman, dengan fokus pada monitoring kelembaban tanah (MOI), suhu udara, dan kelembaban udara. Dashboard dibuat menggunakan Python, Pandas, Plotly, dan Streamlit.
+Proyek ini berisi analisis data sensor pertanian cerdas (Smart Farming) dari berbagai tanaman, dengan fokus pada monitoring kelembaban tanah (MOI), suhu udara, dan kelembaban udara. Dashboard dibuat menggunakan Python, Pandas, Plotly, dan Streamlit untuk membantu memonitor kondisi lingkungan tanaman serta memperkirakan kebutuhan irigasi.
+
+---
+
+## Dashboard Link
+
+https://data-lifecycle-smart-farming-23082010130-tahta.streamlit.app/
 
 ---
 
 ## Deskripsi Dataset
-Dataset berisi pengukuran sensor harian:
-- **crop_id**: Jenis tanaman
-- **soil_type**: Tipe tanah
-- **seedling_stage**: Tahap pertumbuhan bibit
-- **moi**: Moisture Index (indikator kelembaban tanah)
-- **temp**: Temperature (°C)
-- **humidity**: Kelembaban udara (%)
-- **result**: Indikator kebutuhan irigasi (0 = rendah, 1 = sedang, 2 = tinggi)
-- **datetime**: Timestamp pengukuran
 
-Jumlah data awal: 16.411 baris, tanpa missing values.
+Dataset berisi pengukuran sensor pertanian yang digunakan untuk memonitor kondisi lingkungan tanaman.
+
+- **crop_id**: Jenis tanaman  
+- **soil_type**: Tipe tanah  
+- **seedling_stage**: Tahap pertumbuhan bibit  
+- **moi**: Moisture Index (indikator kelembaban tanah)  
+- **temp**: Temperature (°C)  
+- **humidity**: Kelembaban udara (%)  
+- **result**: Indikator kebutuhan irigasi (0 = rendah, 1 = sedang, 2 = tinggi)  
+- **datetime**: Timestamp pengukuran  
+
+Jumlah data awal: **16.411 baris**, tanpa missing values.
+
+---
+
+## Data Lifecycle
+
+Proyek ini menerapkan tahapan **Data Lifecycle** yang meliputi:
+
+1. **Data Collection** – Menggunakan dataset sensor pertanian.  
+2. **Data Cleaning** – Menghapus duplikasi dan menangani outlier menggunakan metode IQR.  
+3. **Data Transformation** – Menyesuaikan format kolom dan timestamp untuk analisis.  
+4. **Data Analysis** – Melakukan analisis statistik dan korelasi antar sensor.  
+5. **Data Visualization** – Menampilkan hasil analisis dalam dashboard interaktif.
 
 ---
 
 ## Struktur Project
-
-
-repo_github/
-├── app.py # Dashboard Streamlit
-├── requirements.txt # Library Python
-├── .streamlit/config.toml # Tema dashboard
+DATA-LIFECYCLE-SMART-FARMING
+│
+├── .devcontainer/
+│
+├── .streamlit/
+│ └── config.toml
+│
+├── dashboard/
+│ └── streamlit_app.py
+│
+├── data_raw/
+│ └── cropdata_updated.csv
+│
 ├── outputs/
-│ └── cleaned_data.csv # Data sensor hasil cleaning
-│ └── dashboard_screenshot.png # Screenshot dashboard (opsional)
-└── BIG DATA.ipynb # Notebook analisis data
+│ ├── cleaned_data.csv
+│ └── dashboard_screenshot.png
+│
+├── Data_Lifecycle_Smart_Farming.ipynb
+├── requirements.txt
+└── README.md
 
+## Fitur Dashboard
 
----
-
-## Instalasi
-
-1. Clone repository:
-
-```bash
-git clone https://github.com/USERNAME/NAMA-REPO.git
-cd NAMA-REPO
-
-Install dependencies:
-
-pip install -r requirements.txt
-Menjalankan Dashboard
-streamlit run app.py
-
-Dashboard terbuka di browser: http://localhost:8501
-
-Untuk publik: gunakan Streamlit Community Cloud atau localtunnel/ngrok
-
-Fitur Dashboard
-
-Time Series Sensor Trend (MOI, Temperature, Humidity)
-
-Gauge Meter
-
-Heatmap Korelasi
-
-Alert System
-
-Data Preview
-
-Filter: Crop ID, Soil Type, Seedling Stage, dan rentang tanggal
-
-Data Quality Score
-
-Accuracy: 100%
-
-Completeness: 100%
-
-Timeliness: 100%
-
-Dashboard Link
-
-https://link-dashboard.streamlit.app
-
+- Time Series Sensor Trend (MOI, Temperature, Humidity)
+- Gauge Meter Monitoring
+- Heatmap Korelasi
+- Alert System
+- Data Preview
+- Filter: Crop ID, Soil Type, Seedling Stage, dan rentang tanggal
 
 ---
 
-### 2️⃣ Cek README.md
+## Data Quality Score
 
-```python
-!cat README.md
+- Accuracy: 100%
+- Completeness: 100%
+- Timeliness: 100%
 
-Pastikan teks lengkap muncul
+---
 
-Bisa diedit jika ingin mengganti USERNAME, NAMA-REPO, dan link dashboard final
+## Technology Used
 
-3️⃣ Push ke GitHub
-!git add README.md
-!git commit -m "Add README.md for Smart Farming Dashboard"
-!git push https://USERNAME:TOKEN@github.com/USERNAME/NAMA-REPO.git
-
-Ganti USERNAME, TOKEN, dan NAMA-REPO sesuai akun GitHub Anda.
+Python, Pandas, NumPy, Matplotlib, Seaborn, Plotly, Streamlit
